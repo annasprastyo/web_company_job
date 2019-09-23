@@ -74,10 +74,9 @@
                                         <td>{{ $Jobs['judul'] }}</td>
                                         <td>{{ $Jobs['created_by'] }}</td>
                                         <td>
-                                            <a href="{{url('staff/edit').'/'.$Jobs['id_job']}}" class="btn btn-warning">Edit</a>
-                                            <a href="{{url('staff/delete').'/'.$Jobs['id_job']}}" class="btn btn-danger">Hapus</a>
+                                            <button onclick="viewdetail({{ $Jobs['id_job'] }})" class="btn btn-info">View</button>
                                         </td>
-                                        <td align="center"><img height="40" width="40" src="{{ $Jobs['image'] }}" alt=""></td>
+                                        <td align="center"><img height="80" width="80" src="{{ $Jobs['image'] }}" alt=""></td>
                                         <td>{{ $Jobs['department'] }}</td>
                                         <td>{{ $Jobs['deskripsi'] }}</td>
                                         <td>{{ $Jobs['dodate'] }}</td>
@@ -129,6 +128,7 @@
         </div>
     </div>
 </div>
+<div id="detail_data"></div>
 
 <!--/ CONTENT -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -148,110 +148,19 @@
                 });
         });
 
-
-
-    var database = firebase.database();
-
-    // $(function () {
-    //     getData()
-    // });
-
-    // function getData() {
-    //     toastr.options = {
-    //         "closeButton": false,
-    //         "debug": false,
-    //         "newestOnTop": false,
-    //         "progressBar": false,
-    //         "positionClass": "toast-top-right",
-    //         "preventDuplicates": false,
-    //         "onclick": null,
-    //         "showDuration": "300",
-    //         "hideDuration": "1000",
-    //         "timeOut": 0,
-    //         "extendedTimeOut": 0,
-    //         "showEasing": "swing",
-    //         "hideEasing": "linear",
-    //         "showMethod": "fadeIn",
-    //         "hideMethod": "fadeOut",
-    //         "tapToDismiss": true
-    //     }
-    //     var obj = [];
-    //     var obj2 = [];
-    //     var obj3 = [];
-    //     // var No = 0;
-    //     var nama_receive = "";
-    //     var tblMhs = firebase.database().ref().child('DataJob');
-    //     var end = false
-    //     tblMhs.on("value", function(snap) {
-    //         obj = [];
-    //         nama_receive = "";
-    //         // No = 1
-
-    //         $.each(snap.val(), function(index, element) {
-
-    //             if (element) {
-    //                 var nama_receive = "Belum ada penerima";
-    //                 if (end) {
-    //                     if (index == snap.numChildren()) {
-    //                         toastr.clear()
-    //                         toastr["info"]("Ada job baru?<br /><br /><button type='button' onclick='getData()' class='btn'>Refresh</button>")
-    //                     }
-    //                 } else {
-    //                     firebase.database().ref().child('/users/' + element.id_receive).on("value", function(snapshot) {
-    //                         receive_by = (snapshot.val() && snapshot.val().nama) || 'Anonymous';
-    //                         var users = snapshot.val();
-    //                         if (users) {
-    //                             nama_receive = users.nama
-    //                         }
-    //                         obj2 = [
-    //                             element.id_job,
-    //                             element.judul,
-    //                             element.nama,
-    //                             '<button data-toggle="modal" data-target="#remove-modal" class="btn btn-danger removeData" onclick="delete_data('+element.id_job+')">Delete</button></td>',
-    //                             '<img src='+element.image+' height="42" width="42">',
-    //                             element.department,
-    //                             element.deskripsi,
-    //                             element.dodate,
-    //                             element.nama,
-    //                             nama_receive
-    //                         ]
-    //                         obj3.push(obj2);
-    //                         addTable(obj3);
-    //                         if (index == snap.numChildren()) {
-    //                             end = true
-    //                         }
-    //                         console.log("" + end + index + snap.numChildren())
-    //                     });
-    //                 }
-    //             }
-    //         });
-
-    // });
-
-    // function addTable(data){
-    // $('#responsive-usage').DataTable().clear().draw();
-    // $('#responsive-usage').DataTable().rows.add(data).draw();
-    // // var table3 = $('#responsive-usage').DataTable({
-    // //                 "data": data,
-    // //                 "columns": [
-    // //                     { "data": "id_job" },
-    // //                     { "data": "judul" },
-    // //                     { "data": "name" },
-    // //                     { "data": "action"},
-    // //                     { "data": "foto" },
-    // //                     { "data": "department" },
-    // //                     { "data": "deskripsi" },
-    // //                     { "data": "dodate" },
-    // //                     { "data": "name" },
-    // //                     { "data": "receive_by" }
-    // //                 ],
-    // //                 "aoColumnDefs": [
-    // //                   { 'bSortable': false, 'aTargets': [ "no-sort" ] }
-    // //                 ]
-    // //             });
-    //             //*i
-    // }
-    // }
+    function viewdetail(id){
+        $.ajax({
+            type: "get",
+            url: "{{url('DetailJob')}}",
+            data: {
+                _token: "{{csrf_token()}}",
+                id_job: id
+                },
+                success: function (data) {
+                    $('#detail_data').html(data)
+                }
+            });
+    }
 
  function delete_data(id){
     firebase.database().ref('department/' + id).remove();

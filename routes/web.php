@@ -20,7 +20,9 @@ Route::get('logout', 'AuthController@logout');
 
 Route::get('dashboard', 'DashboardController@index');
 Route::get('user', 'UserController@index');
+
 Route::get('job', 'JobController@index');
+Route::get('DetailJob', 'JobController@DetailJob');
 
 Route::get('department', 'DepartmentController@index');
 
