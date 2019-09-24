@@ -56,15 +56,15 @@
                             <thead>
                             <tr>
                                 <th>ID Job</th>
-                                <th>Tittle</th>
-                                <th>Name</th>
+                                <th>Judul</th>
+                                <th>Nama</th>
                                 <th>Action</th>
                                 <th class="none">Foto</th>
-                                <th class="none">To Departmnet</th>
-                                <th class="none">Description</th>
+                                <th class="none">Kepada Departmnet</th>
+                                <th class="none">Deskripsi</th>
                                 <th class="none">Date Line</th>
-                                <th class="none">Created By</th>
-                                <th class="none">Receive By</th>
+                                <th class="none">Dibuat Oleh</th>
+                                <th class="none">Diterima Oleh</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -74,7 +74,7 @@
                                         <td>{{ $Jobs['judul'] }}</td>
                                         <td>{{ $Jobs['created_by'] }}</td>
                                         <td>
-                                            <button onclick="viewdetail({{ $Jobs['id_job'] }})" class="btn btn-info">View</button>
+                                            <button onclick="viewdetail({{ $Jobs['id_job'] }})" class="btn btn-info"><i class="fa fa-eye"></i> View</button>
                                         </td>
                                         <td align="center"><img height="80" width="80" src="{{ $Jobs['image'] }}" alt=""></td>
                                         <td>{{ $Jobs['department'] }}</td>
@@ -102,7 +102,7 @@
 </section>
 
 <!-- Modal -->
-<div class="modal fade" id="add_department" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade" id="modal_detail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -149,17 +149,7 @@
         });
 
     function viewdetail(id){
-        $.ajax({
-            type: "get",
-            url: "{{url('DetailJob')}}",
-            data: {
-                _token: "{{csrf_token()}}",
-                id_job: id
-                },
-                success: function (data) {
-                    $('#detail_data').html(data)
-                }
-            });
+        $('#modal_detail').modal('show')
     }
 
  function delete_data(id){

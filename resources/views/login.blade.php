@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/vendor/animate.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/vendor/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/js/vendor/animsition/css/animsition.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/js/vendor/toastr/toastr.min.css')}}">
 
     <!-- project main css files -->
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
@@ -109,6 +110,7 @@
     <script src="{{asset('assets/js/vendor/screenfull/screenfull.min.js')}}"></script>
 
     <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{asset('assets/js/vendor/toastr/toastr.min.js')}}"></script>
 
     {{-- firebase --}}
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
@@ -124,7 +126,44 @@
             appId: "1:721635683345:web:cbd0f314d63ff8f22295b0"
     };
     // Initialize Firebase
-    firebase.initializeApp(config);
+
+            firebase.initializeApp(config);
+
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "6000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+                }
+
+                toastr2.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "3000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+                }
 
             function login(){
 
@@ -133,11 +172,11 @@
 
                 // alert(userEmail+" "+userPass)
                 if (userEmail == "" && userPass == "") {
-                    alert('Email dan Password Harus Di isi');
+                    toastr2["warning"]("Email dan password harus di isi!!");
                 }else if(userEmail == ""){
-                    alert('Email Harus Di isi');
+                    toastr2["warning"]("Email harus di isi!!");
                 }else if (userPass == "") {
-                    alert('Password Harus Di isi');
+                    toastr2["warning"]("Password harus di isi!!");
                 }else{
                 firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
                     // Handle Errors here.
@@ -172,7 +211,7 @@
                             success: function (data) {
                                 // console.log(data);
                                 if(data == 1){
-                                    alert("Berhasil Masuk")
+                                    toastr["success"]("Login Success");
                                     window.location.href = "{{url('/login')}}";
                                 }else{
                                     alert("error");
@@ -181,7 +220,7 @@
                         });
                     }else{
                         firebase.auth().signOut();
-                        alert('Tidak Terdaftar Sebagai Admin!!');
+                        toastr2["warning"]("Login Gagal");
                     }
 
                     });

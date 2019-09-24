@@ -60,19 +60,9 @@
                         <!-- row -->
                         <div class="row">
                             <!-- col -->
-                            <div class="col-xs-4">
-                                <a href=#><i class="fa fa-cog fa-2x"></i> Settings</a>
-                            </div>
-                            <!-- /col -->
-                            <!-- col -->
-                            <div class="col-xs-4">
-                                <a href=#><i class="fa fa-chain-broken fa-2x"></i> Content</a>
-                            </div>
-                            <!-- /col -->
-                            <!-- col -->
-                            <div class="col-xs-4">
-                                <a href=#><i class="fa fa-ellipsis-h fa-2x"></i> More</a>
-                            </div>
+                            <div class="col-xs-12">
+                                    <a href={{url('user')}}><i class="fa fa-ellipsis-h fa-2x"></i> More</a>
+                                </div>
                             <!-- /col -->
                         </div>
                         <!-- /row -->
@@ -91,7 +81,7 @@
                         <div class="row">
                             <!-- col -->
                             <div class="col-xs-4">
-                                <i class="fa fa-shopping-cart fa-4x"></i>
+                                <i class="fa fa-tasks fa-4x"></i>
                             </div>
                             <!-- /col -->
                             <!-- col -->
@@ -111,18 +101,8 @@
                         <!-- row -->
                         <div class="row">
                             <!-- col -->
-                            <div class="col-xs-4">
-                                <a href=#><i class="fa fa-cog fa-2x"></i> Settings</a>
-                            </div>
-                            <!-- /col -->
-                            <!-- col -->
-                            <div class="col-xs-4">
-                                <a href=#><i class="fa fa-chain-broken fa-2x"></i> Content</a>
-                            </div>
-                            <!-- /col -->
-                            <!-- col -->
-                            <div class="col-xs-4">
-                                <a href=#><i class="fa fa-ellipsis-h fa-2x"></i> More</a>
+                            <div class="col-xs-12">
+                                <a href={{url('job')}}><i class="fa fa-ellipsis-h fa-2x"></i> More</a>
                             </div>
                             <!-- /col -->
                         </div>
@@ -142,7 +122,7 @@
                         <div class="row">
                             <!-- col -->
                             <div class="col-xs-4">
-                                <i class="fa fa-usd fa-4x"></i>
+                                <i class="fa fa-briefcase fa-4x"></i>
                             </div>
                             <!-- /col -->
                             <!-- col -->
@@ -162,18 +142,8 @@
                         <!-- row -->
                         <div class="row">
                             <!-- col -->
-                            <div class="col-xs-4">
-                                <a href=#><i class="fa fa-cog fa-2x"></i> Settings</a>
-                            </div>
-                            <!-- /col -->
-                            <!-- col -->
-                            <div class="col-xs-4">
-                                <a href=#><i class="fa fa-chain-broken fa-2x"></i> Content</a>
-                            </div>
-                            <!-- /col -->
-                            <!-- col -->
-                            <div class="col-xs-4">
-                                <a href=#><i class="fa fa-ellipsis-h fa-2x"></i> More</a>
+                            <div class="col-xs-12">
+                                    <a href="{{url('department')}}"><i class="fa fa-ellipsis-h fa-2x"></i> More</a>
                             </div>
                             <!-- /col -->
                         </div>

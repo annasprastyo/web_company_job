@@ -52,6 +52,7 @@
 <script src="{{asset('assets/js/vendor/toastr/toastr.min.js')}}"></script>
 <script src="{{asset('assets/js/vendor/flot/jquery.flot.pie.min.js')}}"></script>
 <script src="{{asset('assets/js/vendor/jRespond/jRespond.min.js')}}"></script>
+<script src="{{asset('assets/js/vendor/toastr/toastr.min.js')}}"></script>
 
 <!--/ vendor javascripts -->
 
@@ -71,6 +72,24 @@
         <!--/ Page Specific Scripts -->
 @include('firebase.config_firebase');
 <script>
+    toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": true,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5800",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+
     var password_old = "";
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -218,7 +237,7 @@
                     },
                     success: function (data) {
                         if(data == 1){
-						    alert("Berhasil Logout")
+						    toastr["success"]("Logout Success");
 						    window.location.href = "{{url('/dashboard')}}";
                         }else{
                             alert("error");

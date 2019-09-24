@@ -16151,6 +16151,12 @@ body a {
   height: 160px;
 }
 
+.size-200x200,
+.wh200 {
+  width: 200px;
+  height: 200px;
+}
+
 .w-40 {
   width: 40px !important;
 }
