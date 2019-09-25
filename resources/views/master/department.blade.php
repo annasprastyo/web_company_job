@@ -155,113 +155,6 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="modal_detail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title custom-font">Detail Job</h3>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                        <div class="col-sm-5">
-                                <div class="form-group col-sm-12">
-                                    <label>Image :</label>
-                                </div>
-                                <div class="form-group col-sm-12">
-                                    <img align="center" class="form-control img-circle size-200x200"
-                                        src="{{url('assets\images\random-avatar1.jpg')}}" height="40" width="40" alt="">
-                                </div>
-
-                        </div>
-                    <div class="col-sm-6">
-                        <div class="form-group col-sm-12">
-                            <label>ID Job :</label>
-                            <label> 1</label>
-                        </div>
-                        <div class="form-group col-sm-12">
-                            <label>judul :</label>
-                            <label> Laptop rusak</label>
-                        </div>
-                        <div class="form-group col-sm-12">
-                            <label>Kepada Departemen :</label>
-                            <label> IT</label>
-                        </div>
-                        <div class="form-group col-sm-12">
-                            <label>Batas Waktu :</label>
-                            <label> 09/10/2019</label>
-                        </div>
-                        <div class="form-group col-sm-12">
-                            <label>Dibuat Oleh :</label>
-                            <label> Annas Prastyo</label>
-                        </div>
-                        <div class="form-group col-sm-12">
-                            <label>Diterima Oleh :</label>
-                            <label> Kazami</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                            <div class="form-group col-sm-12">
-                                    <label>Deskripsi :</label>
-                                </div>
-                                <div class="form-group col-sm-12">
-                                    <label>asdasd asfasdas asfasrfads asrfawdsa aswds abwadsdaw awdbscdaw davwasd
-                                        awdvasdascasda aswdasdcaw abasdca dawdcsbwatad awbdcsba dawbfcectasd
-                                    </label>
-                                </div>
-                    </div>
-                    <div class="col-md-12">
-                            <section class="tile">
-
-                                    <!-- tile header -->
-                                    <div class="tile-header dvd dvd-btm">
-                                        <h1 class="custom-font"><strong>Detail</strong> Rows</h1>
-                                    </div>
-                                    <!-- /tile header -->
-
-                                    <!-- tile body -->
-                                    <div class="tile-body p-0">
-
-                                        <table class="table table-striped">
-                                            <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Deskripsi</th>
-                                                <th>status</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td style="vertical-align: middle;">1</td>
-                                                <td style="vertical-align: middle;">Mark</td>
-                                                <td><label class="checkbox checkbox-custom-alt checkbox-custom-sm">
-                                                        <input checked type="checkbox"><i></i> Small checkbox
-                                                    </label></td>
-                                            </tr>
-                                            <tr>
-                                                <td style="vertical-align: middle;">2</td>
-                                                <td style="vertical-align: middle;">Jacob</td>
-                                                <td><label class="checkbox checkbox-custom-alt checkbox-custom-sm">
-                                                        <input checked type="checkbox"><i></i> Small checkbox
-                                                    </label></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-
-                                    </div>
-                                    <!-- /tile body -->
-
-                                </section>
-                    </div>
-
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-lightred btn-ef btn-ef-4 btn-ef-4c" data-dismiss="modal"><i
-                        class="fa fa-arrow-left"></i> Cancel</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!--/ CONTENT -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -272,9 +165,12 @@
 
         });
 
+
 </script>
 @include('firebase.config_firebase');
 <script>
+
+
     function edit_ketik(){
         var dept_name = $('#e_department_field').val()
         if(dept_name == ""){
@@ -284,11 +180,6 @@
         }
     }
 
-    function openAddModal(){
-    // $("#btn_edit2").attr("disabled", true);
-    // $('#add_department').modal('show');
-    $('#modal_detail').modal('show');
-    }
     function add_ketik(){
         var dept_name2 = $('#department_field').val()
         if(dept_name2 == ""){
@@ -333,13 +224,18 @@
             });
         addTable(obj);
         console.log(obj);
-    });
-
     function addTable(data){
     $('#basic-usage').DataTable().clear().draw();
     $('#basic-usage').DataTable().rows.add(data).draw();
     }
     });
+
+    });
+
+    function openAddModal(){
+        $("#btn_edit2").attr("disabled", true);
+        $('#add_department').modal('show');
+    }
 
     function modal_delete(id){
         $('#delete_department').modal('show');
