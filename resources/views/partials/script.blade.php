@@ -1,4 +1,4 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
     window.jQuery || document.write('<script src="assets/js/vendor/jquery/jquery-1.11.2.min.js"><\/script>')
 </script>
@@ -42,8 +42,6 @@
 <script src="{{asset('assets/js/vendor/datatables/extensions/ColVis/js/dataTables.colVis.min.js')}}"></script>
 <script src="{{asset('assets/js/vendor/datatables/extensions/TableTools/js/dataTables.tableTools.min.js')}}"></script>
 <script src="{{asset('assets/js/vendor/datatables/extensions/dataTables.bootstrap.js')}}"></script>
-
-<script src="{{asset('assets/js/vendor/chosen/chosen.jquery.min.js')}}"></script>
 
 <script src="{{asset('assets/js/vendor/summernote/summernote.min.js')}}"></script>
 
@@ -102,6 +100,7 @@
                 $userid = <?php echo json_encode($userid) ?>;
 
         firebase.database().ref('/users/' + $userid).once('value').then(function(snapshot) {
+
         var Nama = (snapshot.val() && snapshot.val().nama) || 'Anonymous';
         var Phone = (snapshot.val() && snapshot.val().phone) || 'Anonymous';
         var Email = (snapshot.val() && snapshot.val().email) || 'Anonymous';

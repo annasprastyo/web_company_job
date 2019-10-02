@@ -157,12 +157,13 @@
 </div>
 
 <!--/ CONTENT -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="{{asset('assets/js/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('assets/js/vendor/toastr/toastr.min.js')}}"></script>
 <script>
     $(document).ready(function() {
 
+            // console.log(tampil());
         });
 
 
@@ -220,7 +221,9 @@
                 obj2 = [element.id,element.name,'<button data-toggle="modal" onclick="openEditModal('+element.id+', \'' + element.name + '\')" class="btn btn-info updateData">Update</button>\
             <button data-toggle="modal" data-target="#remove-modal" class="btn btn-danger removeData" onclick="modal_delete('+element.id+')">Delete</button></td>'];
             obj.push(obj2);
+            // console.log(tampil(element.name));
             }
+            lastIndex = index
             });
         addTable(obj);
         console.log(obj);
@@ -228,7 +231,23 @@
     $('#basic-usage').DataTable().clear().draw();
     $('#basic-usage').DataTable().rows.add(data).draw();
     }
+    function tampil(name){
+        var aa = firebase.database().ref().child('DataJob').orderByChild('department').equalTo(element.name).on("value", gotOne);
+
+        function gotOne(data) {
+            console.log(data.numChildren())
+        // var ss = data.numChildren() returns number;
+
+        obj2 = [data.numChildren(),element.name,'<button data-toggle="modal" onclick="openEditModal('+element.id+', \'' + element.name + '\')" class="btn btn-info updateData">Update</button>\
+        <button data-toggle="modal" data-target="#remove-modal" class="btn btn-danger removeData" onclick="modal_delete('+element.id+')">Delete</button></td>'];
+        // return obj2
+        obj.push(obj2);
+        }
+
+    }
     });
+
+
 
     });
 

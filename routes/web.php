@@ -22,7 +22,8 @@ Route::get('dashboard', 'DashboardController@index');
 Route::get('user', 'UserController@index');
 
 Route::get('job', 'JobController@index');
-Route::get('DetailJob', 'JobController@DetailJob');
+Route::post('countDept', 'JobController@countDept');
+
 
 Route::get('department', 'DepartmentController@index');
 

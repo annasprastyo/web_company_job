@@ -76,7 +76,7 @@
 
                 <div class="bg-slategray lt wrap-reset mt-40">
                     <p class="m-0">
-                        <a style="cursor:pointer;" class="text-uppercase" onclick="signup()">Create an account</a>
+                        {{-- <a style="cursor:pointer;" class="text-uppercase" onclick="signup()">Create an account</a> --}}
                     </p>
                 </div>
 

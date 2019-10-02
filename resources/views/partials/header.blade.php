@@ -1,11 +1,11 @@
 <!-- ===============================================
             ================= HEADER Content ===================
             ================================================ -->
-<section id="header">
+<section id="header" class="scheme-light">
     <header class="clearfix">
 
         <!-- Branding -->
-        <div class="branding">
+        <div class="branding scheme-light">
             <a class="brand" href="{{url('dashboard')}}">
                 <span><strong>COMPANY</strong>JOB</span>
             </a>
@@ -234,8 +234,8 @@
                                 </div>
 
                                 <div class="form-group col-sm-6">
-                                    <label for="phone">Phone</label>
-                                    <input type="number" id="phone_field" class="form-control" value="Phone">
+                                    <label for="">Phone</label>
+                                    <input type="text" id="phone_field" class="form-control" value="Phone">
                                 </div>
 
 
