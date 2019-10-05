@@ -32,15 +32,15 @@
                                         ================= NAVIGATION Content ===================
                                         ==================================================== -->
                                         <ul id="navigation">
-                                            <li class="active"><a href="{{url('dashboard')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                                            <li @if(!empty($ac_dash)) class="active" @endif ><a href="{{url('dashboard')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
-                                            <li>
+                                            <li @if(!empty($ac_mas)) class="active" @endif >
                                                 <a role="button" tabindex="0"><i class="fa fa-list"></i> <span>Master</span></a>
                                                 <ul>
-                                                    <li><a href="{{url('department')}}"><i class="fa fa-caret-right"></i>Department</a></li>
+                                                    <li><a href="{{url('department')}}"><i class="fa fa-caret-right"></i>Departemen</a></li>
                                                 </ul>
                                             </li>
-                                            <li>
+                                            <li @if(!empty($ac_data)) class="active" @endif >
                                                 <a role="button" tabindex="0"><i class="fa fa-table"></i> <span>Data</span></a>
                                                 <ul>
                                                     <li><a href="{{url('user')}}"><i class="fa fa-caret-right"></i>Data User</a></li>
@@ -55,7 +55,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel charts panel-default">
+                            {{-- <div class="panel charts panel-default">
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" href="#sidebarCharts">
@@ -102,7 +102,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
 
                     </div>

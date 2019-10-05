@@ -15,9 +15,9 @@
 
 
         <!-- Search -->
-        <div class="search" id="main-search">
+        {{-- <div class="search" id="main-search">
             <input type="text" class="form-control underline-input" placeholder="Search...">
-        </div>
+        </div> --}}
         <!-- Search end -->
 
 
@@ -28,73 +28,10 @@
 
             <li class="dropdown messages">
 
-                <a href class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-envelope"></i>
-                    <span class="badge bg-lightred">4</span>
-                </a>
+
 
                 <div class="dropdown-menu pull-right with-arrow panel panel-default animated littleFadeInDown"
                     role="menu">
-
-                    <div class="panel-heading">
-                        You have <strong>4</strong> messages
-                    </div>
-
-                    <ul class="list-group">
-
-                        <li class="list-group-item">
-                            <a role="button" tabindex="0" class="media">
-                                <span class="pull-left media-object thumb thumb-sm">
-                                    <img src="assets/images/ici-avatar.jpg" alt="" class="img-circle">
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">Imrich sent you a message</span>
-                                    <small class="text-muted">12 minutes ago</small>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <a role="button" tabindex="0" class="media">
-                                <span class="pull-left media-object  thumb thumb-sm">
-                                    <img src="assets/images/peter-avatar.jpg" alt="" class="img-circle">
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">Peter sent you a message</span>
-                                    <small class="text-muted">46 minutes ago</small>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <a role="button" tabindex="0" class="media">
-                                <span class="pull-left media-object  thumb thumb-sm">
-                                    <img src="assets/images/random-avatar1.jpg" alt="" class="img-circle">
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">Bill sent you a message</span>
-                                    <small class="text-muted">1 hour ago</small>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <a role="button" tabindex="0" class="media">
-                                <span class="pull-left media-object  thumb thumb-sm">
-                                    <img src="assets/images/random-avatar3.jpg" alt="" class="img-circle">
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">Ken sent you a message</span>
-                                    <small class="text-muted">3 hours ago</small>
-                                </div>
-                            </a>
-                        </li>
-
-                    </ul>
-
-                    <div class="panel-footer">
-                        <a role="button" tabindex="0">Show all messages <i class="pull-right fa fa-angle-right"></i></a>
-                    </div>
 
                 </div>
 
@@ -102,61 +39,10 @@
 
             <li class="dropdown notifications">
 
-                <a href class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-bell"></i>
-                    <span class="badge bg-lightred">3</span>
-                </a>
+
 
                 <div class="dropdown-menu pull-right with-arrow panel panel-default animated littleFadeInLeft">
 
-                    <div class="panel-heading">
-                        You have <strong>3</strong> notifications
-                    </div>
-
-                    <ul class="list-group">
-
-                        <li class="list-group-item">
-                            <a role="button" tabindex="0" class="media">
-                                <span class="pull-left media-object media-icon bg-danger">
-                                    <i class="fa fa-ban"></i>
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">User Imrich cancelled account</span>
-                                    <small class="text-muted">6 minutes ago</small>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <a role="button" tabindex="0" class="media">
-                                <span class="pull-left media-object media-icon bg-primary">
-                                    <i class="fa fa-bolt"></i>
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">New user registered</span>
-                                    <small class="text-muted">12 minutes ago</small>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <a role="button" tabindex="0" class="media">
-                                <span class="pull-left media-object media-icon bg-greensea">
-                                    <i class="fa fa-lock"></i>
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">User Robert locked account</span>
-                                    <small class="text-muted">18 minutes ago</small>
-                                </div>
-                            </a>
-                        </li>
-
-                    </ul>
-
-                    <div class="panel-footer">
-                        <a role="button" tabindex="0">Show all notifications <i
-                                class="fa fa-angle-right pull-right"></i></a>
-                    </div>
 
                 </div>
 
@@ -171,12 +57,6 @@
 
                 <ul class="dropdown-menu animated littleFadeInRight" role="menu">
 
-                    <li>
-                        <a href="{{url('profile')}}" role="button" tabindex="0">
-                            {{-- <span class="badge bg-greensea pull-right">86%</span> --}}
-                            <i class="fa fa-user"></i>Profile
-                        </a>
-                    </li>
                     <li>
                         <a data-toggle="modal" data-target="#myModal" role="button" tabindex="0">
                             <i class="fa fa-cog"></i>Settings
@@ -193,11 +73,11 @@
 
             </li>
 
-            <li class="toggle-right-sidebar pull-right">
+            {{-- <li class="toggle-right-sidebar pull-right">
                 <a role="button" tabindex="0">
                     <i class="fa fa-comments"></i>
                 </a>
-            </li>
+            </li> --}}
         </ul>
         <!-- Right-side navigation end -->
 
@@ -221,20 +101,20 @@
 
                             <div class="row">
                                 <div class="form-group col-md-12 legend">
-                                    <h4><strong>Personal</strong> Settings</h4>
-                                    <p>Your personal account settings</p>
+                                    <h4><strong>Pengaturan</strong> Pribadi</h4>
+                                    <p>Pengaturan akun pribadi Anda</p>
                                 </div>
                             </div>
 
                             <div class="row">
 
                                 <div class="form-group col-sm-6">
-                                    <label for="first-name">Fullname Name</label>
+                                    <label for="first-name">Nama Lengkap</label>
                                     <input type="text" id="nama_field" class="form-control" value="John">
                                 </div>
 
                                 <div class="form-group col-sm-6">
-                                    <label for="">Phone</label>
+                                    <label for="">Kontak</label>
                                     <input type="text" id="phone_field" class="form-control" value="Phone">
                                 </div>
 
@@ -266,29 +146,6 @@
                             </div>
 
                             <div class="row">
-                                <div class="form-group col-md-12 legend">
-                                    <h4><strong>Security</strong> Settings</h4>
-                                    <p>Secure your account</p>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="form-group col-sm-12">
-                                    <label for="password">Current Password</label>
-                                    <input type="password" class="form-control" id="password" value="secretpassword"
-                                        readonly>
-                                </div>
-
-                                <div class="form-group col-sm-6">
-                                    <label for="new-password">New Password</label>
-                                    <input type="password" id="password_field" class="form-control" id="new-password">
-                                </div>
-
-                                <div class="form-group col-sm-6">
-                                    <label for="new-password-repeat">New Password Repeat</label>
-                                    <input type="password" id="r_password_field" class="form-control" id="new-password-repeat">
-                                </div>
-
                             </div>
 
 

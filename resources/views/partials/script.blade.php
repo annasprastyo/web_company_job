@@ -74,7 +74,42 @@
   "closeButton": true,
   "debug": false,
   "newestOnTop": false,
-  "progressBar": true,
+  "progressBar": false,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5800",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+toastr3.options = {
+  "closeButton": true,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5800",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+
+toastr4.options = {
+  "closeButton": true,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
   "positionClass": "toast-top-right",
   "preventDuplicates": false,
   "onclick": null,
@@ -126,17 +161,11 @@
         var userEmail = $("#email_field").val();
         var Foto = $('#foto_field').attr('src');
 
-        var password = $('#password_field').val();
-        var r_password = $('#r_password_field').val();
-
-        if(password != r_password){
-            alert('Password Tidak Sama!!')
-        }else{
-            if (password == "") {
                 firebase.database().ref('users/' + $userid).set({
                     userid: $userid,
                     foto: Foto,
                     email: userEmail,
+                    department: "Admin",
                     nama: userNama,
                     phone: userPhone,
                     password: password_old,
@@ -147,30 +176,7 @@
                         // alert("berhasil");
                         }
                     });
-            }else{
-                firebase.database().ref('users/' + $userid).set({
-                    userid: $userid,
-                    foto: Foto,
-                    email: userEmail,
-                    nama: userNama,
-                    phone: userPhone,
-                    password: password,
-                        }, function(error) {
-                        if (error) {
-                        alert("gagal");
-                        } else {
-                            var user = firebase.auth().currentUser;
-                            var newPassword = password;
-                            user.updatePassword(newPassword).then(function() {
-                            // Update successful.
-                            }).catch(function(error) {
-                            });
-                            // alert("berhasil");
-                        }
-                    });
-            }
-        }
-        $.ajax({
+            $.ajax({
             type: "post",
             url: "{{url('loginPost')}}",
             data: {
@@ -182,13 +188,15 @@
                 },
                 success: function (data) {
                 if(data == 1){
-                    alert("berhasil");
+                    toastr2["success"]("Berhasil!!");
                     location.reload();
                 }else{
                     alert("error")
                 }
                 }
             });
+
+
     }
 
     var storageRef = firebase.storage().ref();

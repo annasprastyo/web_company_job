@@ -80,8 +80,8 @@
                                         <td>{{ $Jobs['department'] }}</td>
                                         <td>{{ $Jobs['deskripsi'] }}</td>
                                         <td>{{ $Jobs['dodate'] }}</td>
-                                        <td>{{ $Jobs['created_by'] }}</td>
-                                        <td>{{ $Jobs['receive_by'] }}</td>
+                                        <td> {{ $Jobs['created_by'] }}</td>
+                                        <td> {{ $Jobs['receive_by'] }}</td>
                                     </tr>
                                     @endforeach
                             </tbody>
@@ -110,11 +110,14 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
+                            <center>
+                                    <img id="loading" src="{{asset("assets/images/loading.gif")}}" width="50" height="50"/>
+                               </center>
                         <div id="data_head">
 
                         </div>
 
-                        <div class="col-md-12">
+                        <div class="col-md-12" id="table_detail">
                             <section class="tile">
 
                                 <!-- tile header -->
@@ -166,6 +169,7 @@
 @include('firebase.config_firebase');
 <script>
      $(document).ready(function() {
+         $('#loading').hide();
         var table3 = $('#responsive-usage').DataTable({
                     "aoColumnDefs": [
                       { 'bSortable': false, 'aTargets': [ "no-sort" ] }
@@ -174,6 +178,11 @@
         });
 
         function viewdetail(id){
+            $('#modal_detail').modal('show');
+            $('#loading').show();
+            $('#table_detail').hide();
+            $('#data_head').hide();
+                setTimeout(function(){
         var user = firebase.auth().currentUser;
                     firebase.database().ref('/DataJob/'+id).once('value').then(function(snapshot) {
                     var id_job = (snapshot.val() && snapshot.val().id_job) || 'Anonymous';
@@ -233,7 +242,9 @@
                             <label>'+deskripsi+'</label>\
                         </div>\
                     </div>'
-
+                    $('#loading').hide()
+                    $('#table_detail').show()
+                    $('#data_head').show();
                     $('#data_head').html(data_head);
                 })
             })
@@ -244,6 +255,7 @@
         snap.forEach(child => {
         var key = child.key;
         var childData = child.val();
+        if(childData){
                var checkbox = '';
                if(childData.isdone == 1){
                     checkbox = '<input disabled checked type="checkbox"><i></i> selesai</label>';
@@ -260,11 +272,21 @@
                 </tr>');
 
             no = parseInt(no + 1)
+        }else{}
         });
         console.log(htmls);
+        if (htmls && htmls.length) {
+        // not empty
+        } else {
+            htmls.push('<tr>\
+                <td style="vertical-align: middle;"></td>\
+                <td style="vertical-align: middle;" align="center">Kosong</td>\
+                <td style="vertical-align: middle;"></td>\
+                </tr>');
+        }
         $('#tbody').html(htmls);
     });
-    $('#modal_detail').modal('show');
+    } , 500);
     }
 
  function delete_data(id){

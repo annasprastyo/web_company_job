@@ -246,10 +246,37 @@ $(window).load(function(){
 
 // Initialize Pie Chart
 // function chart(data6){
-$chart = <?php echo json_encode($chart) ?>;
-$user = <?php echo json_encode($user) ?>;
+var ref = firebase.database().ref("DataJob/");
 
-var options6 = {
+        ref.on("value", function(snapshot) {
+            var IT = 0
+            var Electro = 0
+            var Networking = 0
+            var CS = 0
+            var Desainer = 0
+            snapshot.forEach(uid => {
+                        if(uid.val()['department'] == "IT") {
+                            IT++
+                        } else if(uid.val()['department'] == "Electro") {
+                            Electro++
+                        } else if(uid.val()['department'] == "Networking") {
+                            Networking++
+                        } else if(uid.val()['department'] == "Cleaning Service") {
+                            CS++
+                        } else if(uid.val()['department'] == "Desainer") {
+                            Desainer++
+                        }
+            });
+
+            var chart = [
+                    { label: 'IT', data: IT },
+                    { label: 'Electro', data: Electro },
+                    { label: 'Networking', data: Networking },
+                    { label: 'Cleaning Service', data: CS },
+                    { label: 'Desainer', data: Desainer }
+                ];
+
+                var options6 = {
     series: {
         pie: {
             show: true,
@@ -274,18 +301,48 @@ var options6 = {
     tooltipOpts: { content: '%s: %p.0%, Data: %y.0'  ,  defaultTheme: false, shifts: { x: 0, y: 20 } }
 };
 
-var plot6 = $.plot($("#pie-chart"), $chart, options6);
-
-$(window).resize(function() {
-    // redraw the graph in the correctly sized div
-    plot6.resize();
-    plot6.setupGrid();
-    plot6.draw();
-});
-// * Initialize Pie Chart
+        var plot6 = $.plot($("#pie-chart"), chart, options6);
+        $(window).resize(function() {
+        // redraw the graph in the correctly sized div
+        plot6.resize();
+        plot6.setupGrid();
+        plot6.draw();
+    });
 
 
-var options7 = {
+        console.log(IT+" "+Electro+" "+Networking+" "+CS+" "+Desainer);
+        });
+
+var ref2 = firebase.database().ref("users/");
+
+    ref2.on("value", function(snapshot) {
+    var IT2 = 0
+    var Electro2 = 0
+    var Networking2 = 0
+    var CS2 = 0
+    var Desainer2 = 0
+    snapshot.forEach(uid => {
+                if(uid.val()['department'] == "IT") {
+                    IT2++
+                } else if(uid.val()['department'] == "Electro") {
+                    Electro2++
+                } else if(uid.val()['department'] == "Networking") {
+                    Networking2++
+                } else if(uid.val()['department'] == "Cleaning Service") {
+                    CS2++
+                } else if(uid.val()['department'] == "Desainer") {
+                    Desainer2++
+                }
+    });
+
+    var user = [
+                    { label: 'IT', data: IT2 },
+                    { label: 'Electro', data: Electro2 },
+                    { label: 'Networking', data: Networking2 },
+                    { label: 'Cleaning Service', data: CS2 },
+                    { label: 'Desainer', data: Desainer2 }
+                ];
+        var options7 = {
     series: {
         pie: {
             show: true,
@@ -310,13 +367,14 @@ var options7 = {
     tooltipOpts: { content: '%s: %p.0%, Data: %y.0', defaultTheme: false, shifts: { x: 0, y: 20 }  }
 };
 
-var plot7 = $.plot($("#donut-chart"), $user, options7);
+var plot7 = $.plot($("#donut-chart"), user, options7);
 
 $(window).resize(function() {
     // redraw the graph in the correctly sized div
     plot7.resize();
     plot7.setupGrid();
     plot7.draw();
+});
 });
 
 // }
@@ -335,7 +393,9 @@ $(window).resize(function() {
 
     firebase.database().ref().child('department').on('value', function(snapshot) {
         // alert('Count: ' + snapshot.numChildren());
+        if(snapshot.val().name !== "Admin"){
         $('#count_department').html('<p class="text-elg text-strong mb-0">'+snapshot.numChildren()+'</p>');
+        }
         });
 });
 </script>

@@ -292,8 +292,7 @@
  function update_department(){
         var id = $('#id_department').val();
         var name = $('#e_department_field').val();
-        firebase.database().ref('department/' + id).set({
-            id: id,
+        firebase.database().ref('department/' + id).update({
 			name: name,
         });
         $('#edit_department').modal('hide');

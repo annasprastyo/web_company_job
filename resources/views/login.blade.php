@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Company Job - Admin Dashboard</title>
-    <link rel="icon" type="image/ico" href="{{asset('assets/images/favicon.ico')}}" />
+    <link rel="icon" type="image/png" href="{{asset('assets/images/cj_16.png')}}"/>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -68,6 +68,7 @@
 
                         {{-- <a href="forgotpass.html" class="pull-right mt-10">Forgot Password?</a> --}}
                     </div>
+                    <img id="loading" src="{{asset("assets/images/preloader.gif")}}" width="50" height="50"/>
 
                 </form>
 
@@ -76,7 +77,7 @@
 
                 <div class="bg-slategray lt wrap-reset mt-40">
                     <p class="m-0">
-                        {{-- <a style="cursor:pointer;" class="text-uppercase" onclick="signup()">Create an account</a> --}}
+
                     </p>
                 </div>
 
@@ -129,11 +130,15 @@
 
             firebase.initializeApp(config);
 
+            $( document ).ready(function() {
+                $('#loading').hide();
+            });
+
             toastr.options = {
                 "closeButton": false,
                 "debug": false,
                 "newestOnTop": false,
-                "progressBar": true,
+                "progressBar": false,
                 "positionClass": "toast-top-right",
                 "preventDuplicates": false,
                 "onclick": null,
@@ -166,7 +171,6 @@
                 }
 
             function login(){
-
                 var userEmail = $('#email_field').val();
                 var userPass = $('#password_field').val();
 
@@ -178,12 +182,18 @@
                 }else if (userPass == "") {
                     toastr2["warning"]("Password harus di isi!!");
                 }else{
+                $('#loading').show();
+                setTimeout(function(){
                 firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
                     // Handle Errors here.
                     var errorCode = error.code;
                     var errorMessage = error.message;
 
-                    window.alert("Error : " + errorMessage);
+                    // window.alert("Error : " + errorMessage);
+                    if(errorMessage){
+                        $('#loading').hide();
+                    }
+                    toastr2["warning"]("Email atau passowrd salah");
 
                 });
 
@@ -211,6 +221,7 @@
                             success: function (data) {
                                 // console.log(data);
                                 if(data == 1){
+                                    $('#loading').hide();
                                     toastr["success"]("Login Success");
                                     window.location.href = "{{url('/login')}}";
                                 }else{
@@ -226,7 +237,10 @@
                     });
                 }
                 });
+                 } , 2500);
             }
+
+
             }
 
             function signup(){

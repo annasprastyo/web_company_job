@@ -53,7 +53,8 @@ class JobController extends Controller
         $userid = Session::get('userid');
         $nama = Session::get('nama');
         $foto = Session::get('foto');
-        return view('Data.Job.job', ['Job' => $Job, 'userid' => $userid, 'nama' => $nama, 'foto' => $foto]);
+        $ac_data = "active";
+        return view('Data.Job.job', ['ac_data' => $ac_data, 'Job' => $Job, 'userid' => $userid, 'nama' => $nama, 'foto' => $foto]);
     }
 
     function countDept(Request $request){

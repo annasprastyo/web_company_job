@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>Company Job - Admin Dashboard</title>
-<link rel="icon" type="image/ico" href="{{asset('assets/images/favicon.ico')}}" />
+<link rel="icon" type="image/png" href="{{asset('assets/images/cj_16.png')}}" />
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
