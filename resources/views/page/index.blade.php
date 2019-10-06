@@ -59,12 +59,12 @@
                     <div class="banner-content col-lg-7 col-md-12">
                         <h4 class="text-uppercase">Company Job</h4>
                         <h1>
-                            Use Company Job
+                            Pakai Company Job
                         </h1>
                         <p>
-                            makes it easy to make work notifications with other departments in a company
+                            Mempermudah karyawan dalam membuat pekerjaan ke karyawan departemen lain.
                         </p>
-                        <a href="#" class="primary-btn header-btn text-uppercase">Download Now</a>
+                        <a href="{{asset('apk/company_job.apk')}}" class="primary-btn header-btn text-uppercase">Download Apk</a>
                     </div>
                 </div>
             </div>
@@ -78,17 +78,17 @@
                     <div class="single-feature col-lg-4">
                         <img class="img-fluid" src="{{asset('page/img/f1.png')}}" alt="">
                         <h4>Online Support</h4>
-                        <p>where users who have made work to another department will be handled by one of the users according to the department chosen, where users who make work must wait for the process of taking the job, which will be taken by one of the users from the intended department online.</p>
+                        <p>Dimana karyawan yang membuat pekerjaan, harus menunggu penerima dari karyawan lain secara Online.</p>
                     </div>
                     <div class="single-feature col-lg-4">
                         <img class="img-fluid" src="{{asset('page/img/f2.png')}}" alt="">
-                        <h4>24 working hours</h4>
-                        <p>for working hours, it can be done within 24 hours, depending on the user providing completion or dateline limits.</p>
+                        <h4>24 jam kerja</h4>
+                        <p>untuk jam kerja, Aplikasi dapat di akses selama 24 jam.</p>
                     </div>
                     <div class="single-feature col-lg-4">
                         <img class="img-fluid" src="{{asset('page/img/f3.png')}}" alt="">
-                        <h4>Handling work Problems</h4>
-                        <p>Handling work problems, by giving jobs according to criteria to other departments.</p>
+                        <h4>Menangani masalah kerja</h4>
+                        <p>Menangani masalah pekerjaan, dengan memberikan pekerjaan sesuai kriteria ke departemen lain.</p>
                     </div>
                 </div>
             </div>
@@ -102,9 +102,9 @@
                 <div class="row d-flex justify-content-center">
                     <div class="menu-content pb-60 col-lg-8">
                         <div class="title text-center">
-                            <h1 class="mb-10 text-white">Why Choose Us Company Job</h1>
+                            <h1 class="mb-10 text-white">Mengapa memilih Company Job</h1>
                             <p class="text-white">
-                                    because the Company The company makes it easy for employees in the company to give jobs to other departments asking more efficiently.   </p>
+                                karena Company Job memudahkan karyawan di perusahaan untuk memberikan pekerjaan kepada karyawan departemen lain tanpa melakukannya secara manual.</p>
                         </div>
                     </div>
                 </div>
@@ -116,10 +116,10 @@
                             </div>
                             <div class="desc">
                                 <p>
-                                    Tolong perbaiki servernya, beberapa hari ini terasa lambat koneksinya.
+                                    Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware.
                                 </p>
                                 <h4 mt-30>Mark Alviro Wiens</h4>
-                                <p>CEO Company</p>
+                                <p>CEO at Google</p>
                             </div>
                         </div>
                         <div class="single-testimonial item d-flex flex-row">
@@ -128,10 +128,10 @@
                             </div>
                             <div class="desc">
                                 <p>
-                                    Tolong perbaiki laptop saya, windows saya tiba-tiba blue screen.
+                                    Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware.
                                 </p>
                                 <h4 mt-30>Mark Alviro Wiens</h4>
-                                <p>Departement Electro</p>
+                                <p>CEO at Google</p>
                             </div>
                         </div>
                     </div>
@@ -233,58 +233,56 @@ Where the contents of this Job Company contain features, including for work, acc
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-8 pb-40 header-text">
-                        <h1>Some Awesomeness that should share</h1>
-                        <p>
-                            Who are in extremely love with eco friendly system.
-                        </p>
+                        <h1 style="font-size:200%">Beberapa kehebatan yang harus dibagikan</h1>
+
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="single-service">
-                            <h4><span class="lnr lnr-user"></span>Expert Technicians</h4>
+                            <h4><span class="lnr lnr-user"></span>Teknisi Ahli</h4>
                             <p>
-                                where every job taken, will be handled by expert employees in accordance with their fields.
+                                    dimana setiap pekerjaan yang diambil, akan ditangani oleh karyawan ahli sesuai dengan bidangnya.
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="single-service">
-                            <h4><span class="lnr lnr-license"></span>   </h4>
+                            <h4><span class="lnr lnr-license"></span>Jasa Professional</h4>
                             <p>
-                                    Where the company from the company has been chosen because it is directly from the company.
+                                    Dimana karyawan di perusahaan sudah terpilih dengan dengan kriteria jasa professional.
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="single-service">
-                            <h4><span class="lnr lnr-phone"></span>Great Support</h4>
+                            <h4><span class="lnr lnr-phone"></span>Dukungan Besar</h4>
                             <p>
-                                Employees who receive will help employees who make work by seeing traking info or chat.
+                                Karyawan yang menerima akan membantu karyawan yang membuat pekerjaan dengan melihat info traking atau chat secara online.
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="single-service">
-                            <h4><span class="lnr lnr-rocket"></span>Technical Skills</h4>
+                            <h4><span class="lnr lnr-rocket"></span>Keterampilan teknis</h4>
                             <p>
-                                For skills, do not worry because employees who have been selected according to criteria.
+                                dimana setiap pekerjaan yang diambil, akan ditangani oleh karyawan ahli sesuai dengan bidangnya.
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="single-service">
-                            <h4><span class="lnr lnr-diamond"></span>Highly Recomended</h4>
+                            <h4><span class="lnr lnr-diamond"></span>Sangat direkomendasikan</h4>
                             <p>
-                                because this application makes it easy for employees in the company to make work between departments
+                                karena aplikasi ini memudahkan karyawan di perusahaan untuk membuat pekerjaan antar departemen.
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="single-service">
-                            <h4><span class="lnr lnr-bubble"></span>Positive Reviews</h4>
+                            <h4><span class="lnr lnr-bubble"></span> Ulasan Positif</h4>
                             <p>
-                                From his response this application is very useful in companies because it makes it easy for companies to make work
+                                Dari tanggapannya, aplikasi ini sangat berguna di perusahaan karena memudahkan perusahaan untuk memberi pekerjaan antara departemen.
                             </p>
                         </div>
                     </div>
@@ -304,82 +302,85 @@ Where the contents of this Job Company contain features, including for work, acc
                         <h1>Responsible <br>
                             Employee Support</h1>
                         <p>
-                            Here, I focus on various items and features that we can use in a company job without doing it manually.
+                            Di sini, saya fokus pada berbagai item dan fitur yang dapat kita gunakan dalam aplikasi Company Job tanpa melakukannya secara manual.
                         </p>
-                        <button class="primary-btn mt-20 text-uppercase">Learn More<span class="lnr lnr-arrow-right"></button>
+							<a href="#"><button class="primary-btn mt-20 text-uppercase">Learn More<span class="lnr lnr-arrow-right"></button></a>
                     </div>
                 </div>
             </div>
         </section>
         <!-- End info Area -->
 
-
-        <!-- End about Area -->
-
-        <!-- start contact Area -->
-
-
-        <!-- start footer Area -->
-        <footer class="footer-area section-gap" id="contact">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3  col-md-6 col-sm-6">
-                        <div class="single-footer-widget">
-                            <h4 class="text-white">About Us</h4>
-                            <p>
-                                Company Job is a job application application between departments in a company with a User-Friendly display.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4  col-md-6 col-sm-6">
-                        <div class="single-footer-widget">
-                            <h4 class="text-white">Contact Us</h4>
-                            <p>
-                                You can contact us, below
-                            </p>
-                            <p class="number">
-                                012-6532-568-9746 <br>
-                                012-6532-569-9748
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-5  col-md-6 col-sm-6">
-                        <div class="single-footer-widget">
-                            <h4 class="text-white">Newsletter</h4>
-                            <p>You can trust us. we only send  offers, not a single spam.</p>
-                            <div class="d-flex flex-row" id="mc_embed_signup">
-
-
-                                  <form class="navbar-form" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get">
-                                    <div class="input-group add-on">
-                                          <input class="form-control" name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" type="email">
-                                        <div style="position: absolute; left: -5000px;">
-                                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                                        </div>
-                                      <div class="input-group-btn">
-                                        <button class="genric-btn"><span class="lnr lnr-arrow-right"></span></button>
-                                      </div>
+			<!-- start footer Area -->
+			<footer class="footer-area section-gap" id="contact">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3  col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								<h4 class="text-white">About Me</h4>
+								<p>
+									Nama Saya Annas Prastyo, saya junnior programer. ini adalah project hasil akhir saya selama 1 bulan semoga mendapatkan nilai yang baik.
+								</p>
+							</div>
+						</div>
+                                <div class="col-lg-3  col-md-6 col-sm-6">
+                                    <div class="single-footer-widget">
+                                        <h4 class="text-white">More Info</h4>
+                                        <p>
+                                            Anda Bisa menghubungi kami dengan informasi yang di bawah ini:
+                                        </p>
+                                        <p class="number"  style="font-size:100%">
+                                            Phone : 012-6532-568-9746 <br>
+                                            Email : companyjob@official.com
+                                        </p>
                                     </div>
-                                      <div class="info mt-20"></div>
-                                  </form>
-
-                            </div>
+                                </div>
+						<div class="col-lg-3  col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								<h4 class="text-white">Our Ofiice Location</h4>
+								<p>
+									Jalan Inpres No. 13 & 14 Kav.27A, RT.1/RW.1, Kedoya Utara, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11520
+								</p>
+							</div>
                         </div>
-                    </div>
-                </div>
-                <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        <p class="footer-text m-0">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Company Job <i class="fa fa-heart-o" aria-hidden="true"></i> by <font style="color:#8490ff">Annas Prastyo</font></p>
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    {{-- <div class="footer-social d-flex align-items-center">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                    </div> --}}
-                </div>
-            </div>
-        </footer>
+						<div class="col-lg-3  col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								<h4 class="text-white">Newsletter</h4>
+								<p>Anda bisa mempercayai kami. kami hanya mengirim penawaran, bukan spam tunggal.</p>
+								<div class="d-flex flex-row" id="mc_embed_signup">
+
+
+									  <form class="navbar-form" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get">
+									    <div class="input-group add-on">
+									      	<input class="form-control" name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" type="email">
+											<div style="position: absolute; left: -5000px;">
+												<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+											</div>
+									      <div class="input-group-btn">
+									        <button class="genric-btn"><span class="lnr lnr-arrow-right"></span></button>
+									      </div>
+									    </div>
+									      <div class="info mt-20"></div>
+									  </form>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap">
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p class="footer-text m-0">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						<div class="footer-social d-flex align-items-center">
+							<a href="https://facebook.com"><i class="fa fa-facebook"></i></a>
+							<a href="https://twitter.com"><i class="fa fa-twitter"></i></a>
+                            <a href="https://dribbble.com"><i class="fa fa-dribbble"></i></a>
+                            <a href="https://whatsapp.com"><i class="fa fa-whatsapp"></i></a>
+							<a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+						</div>
+					</div>
+				</div>
+			</footer>
         <!-- End footer Area -->
 
         <script src="{{asset('page/js/vendor/jquery-2.2.4.min.js')}}"></script>

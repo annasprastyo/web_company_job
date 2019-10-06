@@ -41,11 +41,6 @@
                         <h1 class="custom-font"><strong>Table</strong> User</h1>
                         <div class="note"><strong>All</strong> Data User</div>
                         <ul class="controls">
-                            <li>
-                                <a role="button" data-toggle="modal" data-target="#add_department" tabindex="0"
-                                    id="add-entry"><i class="fa fa-plus mr-5"></i> Add
-                                    Data</a>
-                            </li>
                         </ul>
                     </div>
                     <!-- /tile header -->
